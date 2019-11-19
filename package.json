@@ -1,0 +1,35 @@
+{
+  "name": "nested-object-filter",
+  "version": "1.0.0",
+  "description": "This package allows you to filter nested javascript object. It allows you to filter nested object with array of fields. This package has no limit to filter javascript object.",
+  "main": "lib/index.ts",
+  "scripts": {
+    "test": "npx jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammedBashiru/nested-object-filter.git"
+  },
+  "keywords": [
+    "nested-object-filter",
+    "javascript-object-filter",
+    "nested-object-extract",
+    "extract-data-from-object"
+  ],
+  "author": "Mohammed Bashiru",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MohammedBashiru/nested-object-filter/issues"
+  },
+  "homepage": "https://github.com/MohammedBashiru/nested-object-filter#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.7.2",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.9",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {}
+}

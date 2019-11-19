@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "module": "commonjs",
+        "target": "es2017",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "outDir": "./src",
+        "typeRoots": [
+            "./types",
+            "./node_modules/@types"
+        ],
+        "allowJs": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "noImplicitReturns": true
+    },
+    "exclude": [
+        "node_modules",
+        "build",
+        "test"
+    ]
+}
