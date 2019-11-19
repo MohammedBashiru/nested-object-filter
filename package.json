@@ -4,7 +4,7 @@
   "description": "This package allows you to filter nested javascript object. It allows you to filter nested object with array of fields. This package has no limit to filter javascript object.",
   "main": "lib/index.ts",
   "scripts": {
-    "test": "npx jest"
+    "test": "./node_modules/npx/index.js jest"
   },
   "repository": {
     "type": "git",
@@ -31,5 +31,7 @@
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "npx": "^10.2.0"
+  }
 }
