@@ -1,7 +1,5 @@
-# Nested-Obect-Filter
-[![Build Status](https://travis-ci.org/MohammedBashiru/nested-object-filter.svg?branch=master)](https://travis-ci.org/MohammedBashiru/nested-object-filter)
-
-[![Coverage Status](https://coveralls.io/repos/github/MohammedBashiru/nested-object-filter/badge.svg?branch=master)](https://coveralls.io/github/MohammedBashiru/nested-object-filter?branch=master)
+# Nested-Object-Filter
+[![Build Status](https://travis-ci.org/MohammedBashiru/nested-object-filter.svg?branch=master)](https://travis-ci.org/MohammedBashiru/nested-object-filter) [![Coverage Status](https://coveralls.io/repos/github/MohammedBashiru/nested-object-filter/badge.svg?branch=master)](https://coveralls.io/github/MohammedBashiru/nested-object-filter?branch=master)
 
 This package allows you to filter nested javascript object regardless how nested the object is.
 You specify an array of nested arrays to filter object based on how deep you want to filter.
@@ -33,7 +31,7 @@ If we wanted to extract only **personal** and **description** properties from th
     const filter_options = [
         // Filter options goes here.
     ]
-    
+
     const filter_options = [
         ["personal"],
         ["description"] //This is how to specify each field to extract from object.
@@ -48,7 +46,7 @@ if we wanted to extract **business_name, business_description** from the **perso
             "personal", [ //To filter fields from personal property
                 "business_name", "business_description",
                 //If a field here was an object which you would like to filter its properties, You will have to open another [bracket] like
-                
+
                 //note that here **another-field** is part of fields to filter for **personal** 
                 [ "another-field", ["fields to filter"]]
             ]
@@ -74,14 +72,14 @@ if we wanted to extract **business_name, business_description** from the **perso
             "login-count": 100
         }
     }
-    
+
     const filter_options = [
         ["personal", ["gender"]],
         ["description"] //This is how to specify each field to extract from object.
     ]
-    
+
     const result = objFilter(payload, filter_options)
-    
+
     console.lg(result)
     //Outputs
     {
@@ -132,18 +130,18 @@ if we wanted to extract **business_name, business_description** from the **perso
             },
             "other-property": "Other value here"
         }
-        
+
     const filter_options = [
-            [ 
+            [
                 "personal", [ "is_business", "business_name", ["social", ["website", "twitter", ["statistics", ["followers", "following"]] ]] ]
             ],
-            [ 
+            [
                 "meta", [ "last-login", "login-count", ["info", ["timestamp", "user_id"]] ]
             ],
             [ "other-property"]
         ]
-    
-    const filteredData = objFilter(payload, filter_options); 
+
+    const filteredData = objFilter(payload, filter_options);
     // Output
         {
             "personal": {
@@ -166,13 +164,7 @@ if we wanted to extract **business_name, business_description** from the **perso
                     "timestamp": 1574178847,
                     "user_id": "JhbGciOiJIUzI1NiIsInR5"
                 }
-                
             },
             "other-property": "Other value here"
         }
 ```
-
-
-
-
-
