@@ -4,7 +4,8 @@
   "description": "This package allows you to filter nested javascript object. It allows you to filter nested object with array of fields. This package has no limit to filter javascript object.",
   "main": "lib/index.ts",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "@babel/preset-typescript": "^7.7.2",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.9",
+    "coveralls": "^3.0.7",
     "jest": "^24.9.0",
     "ts-jest": "^24.1.0",
     "typescript": "^3.7.2"
