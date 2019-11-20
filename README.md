@@ -1,8 +1,11 @@
 # Nested-Object-Filter
-[![Build Status](https://travis-ci.org/MohammedBashiru/nested-object-filter.svg?branch=master)](https://travis-ci.org/MohammedBashiru/nested-object-filter) [![Coverage Status](https://coveralls.io/repos/github/MohammedBashiru/nested-object-filter/badge.svg?branch=master)](https://coveralls.io/github/MohammedBashiru/nested-object-filter?branch=master)
+![NPM](https://img.shields.io/npm/l/nested-object-filter) ![npm](https://img.shields.io/npm/v/nested-object-filter?label=version) [![Build Status](https://travis-ci.org/MohammedBashiru/nested-object-filter.svg?branch=master)](https://travis-ci.org/MohammedBashiru/nested-object-filter) [![Coverage Status](https://coveralls.io/repos/github/MohammedBashiru/nested-object-filter/badge.svg?branch=master)](https://coveralls.io/github/MohammedBashiru/nested-object-filter?branch=master) ![GitHub top language](https://img.shields.io/github/languages/top/MohammedBashiru/nested-object-filter)
 
 This package allows you to filter nested javascript object regardless how nested the object is.
 You specify an array of nested arrays to filter object based on how deep you want to filter.
+
+### Version 1.0.0
+- Initial Release
 
 ## Installation
 ```npm install nested-object-filter```
