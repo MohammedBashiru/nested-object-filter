@@ -2,7 +2,7 @@
   "name": "nested-object-filter",
   "version": "1.2.0",
   "description": "This package allows you to filter nested javascript object. It allows you to filter nested object with array of fields. This package has no limit to filter javascript object.",
-  "main": "lib/index.ts",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls"
