@@ -4,13 +4,141 @@
 This package allows you to filter nested javascript object regardless how nested the object is.
 You specify an array of nested arrays to filter object based on how deep you want to filter.
 
-### Version 1.0.0
+### Version 1.2.0
 - Initial Release
+
+#### Note!: Reference test file for more samples
+
+### Whats new ?
+1.  Support Nested Object with nested object paths ref test file
+2.  Supports Nested object with simple object paths. ref test file
+3.  Has both named and default export for commonJS;
 
 ## Installation
 ```npm install nested-object-filter```
 
 ## Simple Usage
+```javascript
+    const objFilter = require("nested-object-filter");
+    const sourceObject = {
+        personal: {
+            is_business: true,
+            business_name: 'Business Name',
+            business_description: 'Business description here',
+            gender: 'Male',
+            city: 'Unknown',
+            Region: 'Unknown',
+            country: 'Unknown',
+            social: {
+                whatsapp: 'whatsapp-link-here',
+                website: 'website-link',
+                facebook: 'facebook-link',
+                twitter: 'twitter-link',
+                instagram: 'instagram-link',
+                statistics: {
+                    followers: 1000,
+                    following: 62000,
+                    likes: 14000,
+                    dislikes: 9000
+                }
+            }
+        },
+        meta: {
+            'last-login': 1574187006717,
+            'login-count': 100,
+            info: {
+                timestamp: 1574178847,
+                user_id: 'JhbGciOiJIUzI1NiIsInR5'
+            }
+        },
+        'other-property': 'Other value here'
+    };
+
+    const filter_options = [
+            [ 'personal.social', 
+                [
+                    'statistics.followers',
+                    'statistics.following'
+                ]
+            ],
+            [ 'personal.is_business'],
+            [ 'personal.business_description'],
+            [ 'meta.last-login'],
+            [ 'meta.login-count'],
+            [ 'meta', 
+                [
+                    ['info', [
+                        'timestamp',
+                        'user_id'
+                    ]]
+                ]
+            ]
+		];
+
+        const filteredData = objFilter(sourceObject, filter_options); 
+		const result = {
+			'personal.social': {
+                'statistics.followers': 1000,
+                'statistics.following': 62000
+            },
+            'personal.is_business': true,
+            'personal.business_description': 'Business description here',
+            'meta.last-login': 1574187006717,
+            'meta.login-count': 100,
+            'meta': {
+                'info': {
+                    'timestamp': 1574178847,
+                    'user_id': 'JhbGciOiJIUzI1NiIsInR5'
+                }
+            }
+		};
+```
+
+## Advanced Usage ( Nested Object, key paths and names) 
+```javascript
+
+    const filter_options = [
+            [ 'personal.social', 
+                [
+                    'statistics.followers',
+                    'statistics.following'
+                ]
+            ],
+            [ 'personal.is_business'],
+            [ 'personal.business_description'],
+            [ 'meta.last-login'],
+            [ 'meta.login-count'],
+            [ 'meta', 
+                [
+                    ['info', [
+                        'timestamp',
+                        'user_id'
+                    ]]
+                ]
+            ]
+		];
+        const filteredData = objFilter(sourceObject, filter_options); 
+
+		const result = {
+			'personal.social': {
+                'statistics.followers': 1000,
+                'statistics.following': 62000
+            },
+            'personal.is_business': true,
+            'personal.business_description': 'Business description here',
+            'meta.last-login': 1574187006717,
+            'meta.login-count': 100,
+            'meta': {
+                'info': {
+                    'timestamp': 1574178847,
+                    'user_id': 'JhbGciOiJIUzI1NiIsInR5'
+                }
+            }
+
+		};
+
+```
+## Advanced Usage Samples
 ```javascript
     const objFilter = require("nested-object-filter")
     const payload = {
@@ -52,8 +180,7 @@ if we wanted to extract **business_name, business_description** from the **perso
 
                 //note that here **another-field** is part of fields to filter for **personal** 
                 [ "another-field", ["fields to filter"]]
-            ]
-        ] //Everything within this [bracket] is for the **personal** property
+            ] //Everything within this [bracket] is for the **personal** property
     ]
 
 ```
