@@ -4,7 +4,7 @@
 This package allows you to filter nested javascript object regardless how nested the object is.
 You specify an array of nested arrays to filter object based on how deep you want to filter.
 
-### Current Version 1.2.1
+### Current Version 1.2.3
 
 ### Version 1.0.0
 - Initial Release
